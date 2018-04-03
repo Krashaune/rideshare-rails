@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
 resources :trips
 
+resources :passengers
+
 end
