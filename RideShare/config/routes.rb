@@ -5,4 +5,6 @@ resources :trips
 
 resources :passengers
 
+resources :drivers
+
 end
