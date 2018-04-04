@@ -9,9 +9,23 @@
 
   <ul>
     <% @driver.trips.each do |trip| %>
+    
     <li>
-      <%= trip %>
+      <strong>Id</strong> <%= trip.id %>
     </li>
+    <li>
+      <strong>Date </strong><%= trip.date %>
+    </li>
+    <li>
+      <strong>Driver_id</strong> <%= trip.driver_id %>
+    </li>
+    <li>
+      <strong>Rating</strong> <%= trip.rating %>
+    </li>
+    <li>
+      <strong>Cost</strong> $<%= trip.cost %>
+    </li>
+
     <% end %>
   </ul>
 </section>
