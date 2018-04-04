@@ -4,6 +4,8 @@ class DriversController < ApplicationController
 
     @drivers = Driver.all
 
+    # @drivers = Driver.limit(10)
+
   end
 
   def new
