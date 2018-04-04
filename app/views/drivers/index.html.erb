@@ -1,0 +1,17 @@
+<h2>RideShare Drivers</h2>
+
+<ul class="driver">
+  <% @drivers.each do |driver| %>
+  <li>
+    <strong><%= link_to(driver.name, driver_path(driver)) %></strong>
+
+
+    <button class="button-selects">
+      <%= link_to("Edit", edit_driver_path(driver)) %>
+    </button>
+    <button class="button-selects">
+      <%= link_to("Delete", driver_path(driver.id), method: :delete, data: { confirm: "Are you sure?" }) %>
+    </button>
+  </li>
+  <% end %>
+</ul>

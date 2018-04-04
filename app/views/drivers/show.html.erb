@@ -1,0 +1,17 @@
+<h2><%= @driver.name %></h2>
+
+<p>
+  VIN: <%= @driver.vin %>
+</p>
+
+<section>
+  <h3>Driver Trips</h3>
+
+  <ul>
+    <% @driver.trips.each do |trip| %>
+    <li>
+      <%= trip %>
+    </li>
+    <% end %>
+  </ul>
+</section>
