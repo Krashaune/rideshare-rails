@@ -1,0 +1,49 @@
+ <!-- Page contents
+ list of all trips
+links to edit & Delete
+add a new trip-->
+
+<section>
+  <ul>
+    <li>
+      Name: <%= @passenger.name %>
+    </li>
+    <li>
+      Phone Number: <%= @passenger.phone_num %>
+      Total Spent
+    </li>
+    <li>
+      Request Ride
+    </li>
+  </ul>
+
+
+</section>
+
+<h2>Passenger Trips</h2>
+<section>
+  <ul>
+    <% @passenger.trips.each do |trip|%>
+
+    <li>
+      <strong>Id</strong> <%= trip.id %>
+    </li>
+    <li>
+      <strong>Date </strong><%= trip.date %>
+    </li>
+    <li>
+      <strong>Driver_id</strong> <%= trip.driver_id %>
+    </li>
+    <li>
+      <strong>Rating</strong> <%= trip.rating %>
+    </li>
+    <li>
+      <strong>Cost</strong> $<%= trip.cost %>
+    </li>
+    <li>
+      delete
+    </li>
+
+  </ul>
+  <%end%>
+</section>
