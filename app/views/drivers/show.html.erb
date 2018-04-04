@@ -9,7 +9,7 @@
 
   <ul>
     <% @driver.trips.each do |trip| %>
-    
+
     <li>
       <strong>Id</strong> <%= trip.id %>
     </li>
@@ -23,7 +23,7 @@
       <strong>Rating</strong> <%= trip.rating %>
     </li>
     <li>
-      <strong>Cost</strong> $<%= trip.cost %>
+      <strong>Cost</strong> $<%= trip.cost/100 %>
     </li>
 
     <% end %>
