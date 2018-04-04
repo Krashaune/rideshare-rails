@@ -1,11 +1,17 @@
 <h2>RideShare Passenger List</h2>
 
 <ul>
-  <% @passengers.each do |passenger| %>
+  <%@passengers.each do |passenger| %>
   <li>
     <strong><%= link_to(passenger.name,passenger_path(passenger)) %></strong>
-    <%= 'Edit'%>
-    <%= 'Delete'%>
+
+    <button class='button-selects'>
+    <%=link_to('Edit',edit_passenger_path(passenger))%>
+    </button>
+    <button>
+      <%= link_to('Delete', passenger_path(passenger.id), method: :delete, data: {confirm: "Are you sure?"})%>
+    </button>
+
   </li>
+  <% end%>
 </ul>
-<% end%>

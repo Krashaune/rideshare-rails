@@ -15,10 +15,12 @@
     <nav>
       <ul>
         <li>
-          Add Driver
+          <%= link_to("All Drivers",drivers_path)%>
+          <%=link_to("Add Driver", new_driver_path) %>
         </li>
         <li>
-          Add Passenger
+          <%= link_to("All Passengers",passengers_path)%>
+          <%= link_to("Add Passenger" ,new_passenger_path) %>
         </li>
       </ul>
     </nav>
