@@ -19,6 +19,9 @@
         <strong>Driver_id</strong>
       </th>
       <th>
+        <strong>Passenger</strong>
+      </th>
+      <th>
         <strong>Cost</strong>
       </th>
       <th>
@@ -34,15 +37,24 @@
         <%= trip.date %>
       </td>
       <td>
-        <%= trip.driver_id %>
+        <%= trip.driver.id%>
       </td>
       <td>
-        $<%= trip.cost %>
+        <%= trip.passenger.name%>
+      </td>
+      <td>
+        $<%= trip.cost/100 %>
       </td>
       <td>
         <%= trip.rating %>
       </td>
+      <td>
+        <button class="button-selects">
+          <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure?" }) %>
+        </button>
+      </td>
     </tr>
+
     <% end %>
   </table>
 </section>

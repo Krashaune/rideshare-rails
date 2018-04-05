@@ -4,46 +4,70 @@ links to edit & Delete
 add a new trip-->
 
 <section>
-  <ul>
+  <h2 class="details"><%= @passenger.name %> Information</h2>
+
+  <ul class="passenger_details">
     <li>
-      Name: <%= @passenger.name %>
+      <strong>Phone Number:</strong> <%= @passenger.phone_num %>
     </li>
     <li>
-      Phone Number: <%= @passenger.phone_num %>
-      Total Spent
+      <strong>Total Spent:</strong> $<%=@passenger.total_spent%>
     </li>
     <li>
-      Request Ride
+      <button>
+        Request Ride
+      </button>
+
     </li>
   </ul>
-
-
 </section>
 
-<h2>Passenger Trips</h2>
-<section>
-  <ul>
-    <% @passenger.trips.each do |trip|%>
 
+<section>
+  <h2 class="details"><%= @passenger.name %> Trips</h2>
+
+  <ul class="trips_table">
     <li>
-      <strong>Id</strong> <%= trip.id %>
+      ID
     </li>
     <li>
-      <strong>Date </strong><%= trip.date %>
+      Date
     </li>
     <li>
-      <strong>Driver_id</strong> <%= trip.driver_id %>
+      Driver
     </li>
     <li>
-      <strong>Rating</strong> <%= trip.rating %>
+      Rating
     </li>
     <li>
-      <strong>Cost</strong> $<%= trip.cost/100 %>
+      Cost
     </li>
     <li>
-      delete
+
     </li>
+
+    <%@passenger.trips.each do |trip|%>
+    <li>
+      <%= trip.id %>
+    </li>
+    <li>
+      <%= trip.date %>
+    </li>
+    <li>
+      <%= trip.driver_id %>
+    </li>
+    <li>
+      <%= trip.rating %>
+    </li>
+    <li>
+      $<%= trip.cost/100 %>
+    </li>
+      <button>
+        <%= link_to('Delete',passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure?"})%>
+      </button>
+    <%end%>
+
 
   </ul>
-  <%end%>
+
 </section>
