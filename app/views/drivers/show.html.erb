@@ -7,25 +7,42 @@
 <section>
   <h3>Driver Trips</h3>
 
-  <ul>
+  <table>
+    <tr>
+      <th>
+        <strong>Id</strong>
+      </th>
+      <th>
+        <strong>Date</strong>
+      </th>
+      <th>
+        <strong>Driver_id</strong>
+      </th>
+      <th>
+        <strong>Cost</strong>
+      </th>
+      <th>
+        <strong>Rating</strong>
+      </th>
+    </tr>
     <% @driver.trips.each do |trip| %>
-
-    <li>
-      <strong>Id</strong> <%= trip.id %>
-    </li>
-    <li>
-      <strong>Date </strong><%= trip.date %>
-    </li>
-    <li>
-      <strong>Driver_id</strong> <%= trip.driver_id %>
-    </li>
-    <li>
-      <strong>Rating</strong> <%= trip.rating %>
-    </li>
-    <li>
-      <strong>Cost</strong> $<%= trip.cost/100 %>
-    </li>
-
+    <tr>
+      <td>
+        <%= trip.id %>
+      </td>
+      <td>
+        <%= trip.date %>
+      </td>
+      <td>
+        <%= trip.driver_id %>
+      </td>
+      <td>
+        $<%= trip.cost %>
+      </td>
+      <td>
+        <%= trip.rating %>
+      </td>
+    </tr>
     <% end %>
-  </ul>
+  </table>
 </section>
