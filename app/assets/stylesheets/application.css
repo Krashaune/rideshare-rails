@@ -14,7 +14,10 @@
  *= require_self
  */
  /*All page styling*/
- 
+ header {
+   /*background-color: grey;*/
+   margin-bottom: 70px;
+ }
 
 li {
   list-style-type: none;
@@ -32,7 +35,7 @@ nav li {
   border: 2px solid #000000;
   text-align: center;
   /*padding: 30px;*/
-  margin: 5px;
+  /*margin: 5px;*/
   align-self: center;
 }
 nav a {
