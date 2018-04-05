@@ -1,3 +1,4 @@
+require 'date'
 class Passenger < ApplicationRecord
   has_many :trips
 

@@ -4,25 +4,27 @@ links to edit & Delete
 add a new trip-->
 
 <section>
-  <ul>
+  <h2 class="details"><%= @passenger.name %> Information</h2>
+
+  <ul class="passenger_details">
     <li>
-      Name: <%= @passenger.name %>
+      <strong>Phone Number:</strong> <%= @passenger.phone_num %>
     </li>
     <li>
-      Phone Number: <%= @passenger.phone_num %>
-      Total Spent $<%=@passenger.total_spent%>
+      <strong>Total Spent:</strong> $<%=@passenger.total_spent%>
     </li>
     <li>
-      Request Ride
+      <button>
+        Request Ride
+      </button>
+
     </li>
   </ul>
-
-
 </section>
 
 
 <section>
-  <h2>Passenger Trips</h2>
+  <h2 class="details"><%= @passenger.name %> Trips</h2>
 
   <ul class="trips_table">
     <li>
