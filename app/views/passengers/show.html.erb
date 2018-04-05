@@ -15,7 +15,7 @@ add a new trip-->
     </li>
     <li>
       <button>
-        Request Ride
+        <%= link_to('Request Ride', passenger_trips_path(@passenger.id),method: :post)%>
       </button>
 
     </li>
@@ -51,7 +51,7 @@ add a new trip-->
       <%= trip.id %>
     </li>
     <li>
-      <%= trip.date = DateTime.now.strftime("%b %d, %Y") %>
+      <%= trip.date.strftime("%b %d, %Y") %>
     </li>
     <li>
       <%= trip.driver_id %>

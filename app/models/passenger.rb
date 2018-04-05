@@ -1,4 +1,5 @@
 require 'date'
+
 class Passenger < ApplicationRecord
   has_many :trips
 
@@ -23,17 +24,20 @@ class Passenger < ApplicationRecord
   # add the trip to passengers trips
   # add the trip to drivers trips
 
-  # driver = @drivers.sample
-  # trip_data = {
-  #   date = Date.today,
-  #   driver_id = driver.id,
-  #   passenger_id = self.id,
-  #   price = 679,
-  #   rating = 0,
-  # }
-  # request_trip = Trip.new(trip_data)
-  # passenger.trips << request_trip
-  # driver.trips << request_trip
+  driver = Driver.all.sample
 
+  trip_data = {
+    :date => Date.today,
+    :driver_id => driver.id,
+    :passenger_id => self.id,
+    :cost => 679,
+    :rating => 0,
+  }
+  request_trip = Trip.new(trip_data)
+
+  self.trips << request_trip
+  driver.trips << request_trip
+
+  return request_trip
   end
 end
