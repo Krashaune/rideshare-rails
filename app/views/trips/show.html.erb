@@ -1,11 +1,7 @@
-<h2><%= @driver.name %></h2>
 
-<p>
-  VIN: <%= @driver.vin %>
-</p>
 
 <section>
-  <h3>Driver Trips</h3>
+  <h3>Trips #<%= @trip.id %></h3>
 
   <table>
     <tr>
@@ -16,7 +12,7 @@
         <strong>Date</strong>
       </th>
       <th>
-        <strong>Driver_id</strong>
+        <strong>Drivers</strong>
       </th>
       <th>
         <strong>Passenger</strong>
@@ -28,33 +24,30 @@
         <strong>Rating</strong>
       </th>
     </tr>
-    <% @driver.trips.each do |trip| %>
     <tr>
       <td>
-        <%= link_to(trip.id, trip_path(trip)) %>
+        <%= @trip.id %>
       </td>
       <td>
-        <%= trip.date = DateTime.now.strftime("%b %d, %Y") %>
+        <%= @trip.date = DateTime.now.strftime("%b %d, %Y") %>
       </td>
       <td>
-        <%= trip.driver.id%>
+        <%= @trip.driver.name%>
       </td>
       <td>
-        <%= trip.passenger.name%>
+        <%= @trip.passenger.name%>
       </td>
       <td>
-        $<%= trip.cost/100 %>
+        $<%= @trip.cost/100 %>
       </td>
       <td>
-        <%= trip.rating %>
+        <%= @trip.rating %>
       </td>
       <td>
         <button class="button-selects">
-          <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure?" }) %>
+          <%= link_to("Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Are you sure?" }) %>
         </button>
       </td>
     </tr>
-
-    <% end %>
   </table>
 </section>

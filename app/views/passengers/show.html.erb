@@ -51,7 +51,7 @@ add a new trip-->
       <%= trip.id %>
     </li>
     <li>
-      <%= trip.date %>
+      <%= trip.date = DateTime.now.strftime("%b %d, %Y") %>
     </li>
     <li>
       <%= trip.driver_id %>
