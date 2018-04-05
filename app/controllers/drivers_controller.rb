@@ -40,7 +40,7 @@ class DriversController < ApplicationController
     @driver.assign_attributes(driver_params)
 
     if @driver.save
-      redirect_to driver_path(driver)
+      redirect_to driver_path(@driver)
     else
       render :edit
     end
