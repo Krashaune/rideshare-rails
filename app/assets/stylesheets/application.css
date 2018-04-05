@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ /*All page styling*/
 li {
   list-style-type: none;
+}
+
+/*navigation bar styling*/
+
+/*show page styling*/
+.trips_table {
+  display:grid;
+  width: 90%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }

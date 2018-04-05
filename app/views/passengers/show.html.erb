@@ -24,31 +24,48 @@ add a new trip-->
 <section>
   <h2>Passenger Trips</h2>
 
-  <ul>
+  <ul class="trips_table">
+    <li>
+      ID
+    </li>
+    <li>
+      Date
+    </li>
+    <li>
+      Driver
+    </li>
+    <li>
+      Rating
+    </li>
+    <li>
+      Cost
+    </li>
+    <li>
+
+    </li>
+
     <%@passenger.trips.each do |trip|%>
-
     <li>
-      <strong>Id</strong> <%= trip.id %>
+      <%= trip.id %>
     </li>
     <li>
-      <strong>Date </strong><%= trip.date %>
+      <%= trip.date %>
     </li>
     <li>
-      <strong>Driver_id</strong> <%= trip.driver_id %>
+      <%= trip.driver_id %>
     </li>
     <li>
-      <strong>Rating</strong> <%= trip.rating %>
+      <%= trip.rating %>
     </li>
     <li>
-      <strong>Cost</strong> $<%= trip.cost/100 %>
+      $<%= trip.cost/100 %>
     </li>
-
-    <%end%>
-    <li>
       <button>
         <%= link_to('Delete',passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure?"})%>
       </button>
-    </li>
+    <%end%>
+
+
   </ul>
 
 </section>
