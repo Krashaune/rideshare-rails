@@ -10,11 +10,15 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.new(passenger_params)
+    @passenger = Passenger.new(passenger_params)
 
-    if passenger.save
+    if @passenger.save
       redirect_to passengers_path
+    else
+      # Validations failed! What do we do now? See below...
+      render :new
     end
+
   end
 
   def show
@@ -28,12 +32,14 @@ class PassengersController < ApplicationController
   end
 
   def update
-    passenger = Passenger.find(params[:id])
+    @passenger = Passenger.find(params[:id])
 
-    passenger.assign_attributes(passenger_params)
+    @passenger.assign_attributes(passenger_params)
 
-    if passenger.save
-      redirect_to passenger_path(passenger)
+    if @passenger.save
+      redirect_to passenger_path(@passenger)
+    else
+      render :edit
     end
   end
 
