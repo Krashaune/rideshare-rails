@@ -1,8 +1,23 @@
-<h2><%= @driver.name %></h2>
+<!-- Page contents
+list of all drivers
+links to edit & delete -->
 
-<p>
-  VIN: <%= @driver.vin %>
-</p>
+<section>
+  <h2 class="details"><%= @driver.name %></h2>
+
+  <ul class="driver_details">
+    <li>
+      <strong>Model:</strong> <%= @driver.car_model %>
+    </li>
+    <li>
+      <strong>Total Earnings:</strong> $<%=@driver.total_revenue%>
+    </li>
+    <li>
+      <strong>Avg Rating:</strong> <%=@driver.average_rating%>
+    </li>
+  </ul>
+
+</section>
 
 <section>
   <h3>Driver Trips</h3>
