@@ -1,5 +1,5 @@
- <!-- Page contents
- list of all passengers
+<!-- Page contents
+list of all passengers
 links to edit & Delete
 add a new trip-->
 
@@ -26,48 +26,54 @@ add a new trip-->
 <section>
   <h2 class="details"><%= @passenger.name %> Trips</h2>
 
-  <ul class="trips_table">
-    <li>
-      ID
+  <table class="trips_table">
+    <th>
+      <strong>ID</strong>
     </li>
-    <li>
-      Date
-    </li>
-    <li>
-      Driver
-    </li>
-    <li>
-      Rating
-    </li>
-    <li>
-      Cost
-    </li>
-    <li>
-
-    </li>
-
-    <%@passenger.trips.each do |trip|%>
-    <li>
-      <%= trip.id %>
-    </li>
-    <li>
-      <%= trip.date.strftime("%b %d, %Y") %>
-    </li>
-    <li>
-      <%= trip.driver_id %>
-    </li>
-    <li>
-      <%= trip.rating %>
-    </li>
-    <li>
+    <th>
+      <strong>Date</strong>
+    </th>
+    <th>
+      <strong>Driver_id</strong>
+    </th>
+    <th>
+      <strong>Passenger</strong>
+    </th>
+    <th>
+      <strong>Cost</strong>
+    </th>
+    <th>
+      <strong>Rating</strong>
+    </th>
+  </tr>
+  <%@passenger.trips.each do |trip|%>
+  <tr>
+    <td>
+      <%= link_to(trip.id, trip_path(trip)) %>
+    </td>
+    <td>
+      <%= trip.date = DateTime.now.strftime("%b %d, %Y") %>
+    </td>
+    <td>
+      <%= trip.driver.id%>
+    </td>
+    <td>
+      <%= trip.passenger.name%>
+    </td>
+    <td>
       $<%= trip.cost/100 %>
-    </li>
-      <button>
+    </td>
+    <td>
+      <%= trip.rating %>
+    </td>
+    <td>
+      <button class="button-selects">
         <%= link_to('Delete',passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure?"})%>
       </button>
-    <%end%>
+    </td>
+  </tr>
 
-
-  </ul>
+  <% end %>
+  </table>
 
 </section>
