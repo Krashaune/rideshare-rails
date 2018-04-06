@@ -31,7 +31,7 @@ links to Delete -->
         <%= @trip.id %>
       </td>
       <td>
-        <%= @trip.date = DateTime.now.strftime("%b %d, %Y") %>
+        <%= @trip.date.strftime("%b %d, %Y") %>
       </td>
       <td>
         <%= link_to(@trip.driver.name, driver_path(@trip.driver)) %>

@@ -49,7 +49,7 @@ links to edit & delete -->
         <%= link_to(trip.id, trip_path(trip)) %>
       </td>
       <td>
-        <%= trip.date = DateTime.now.strftime("%b %d, %Y") %>
+        <%= trip.date.strftime("%b %d, %Y") %>
       </td>
       <td>
         <%= trip.driver.id%>

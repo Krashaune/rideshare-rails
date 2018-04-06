@@ -1,6 +1,8 @@
 class Driver < ApplicationRecord
   has_many :trips
 
+  validates :name, :vin, presence: true
+
   def total_revenue
     fee = 1.65
     driver_takehome = 0.8
@@ -26,6 +28,6 @@ class Driver < ApplicationRecord
       average = (total_ratings.to_f) / trips.length
     end
 
-    return average
+    return average.round(2)
   end
 end
