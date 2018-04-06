@@ -65,6 +65,9 @@ links to edit & delete -->
       </td>
       <td>
         <button class="button-selects">
+          <%=link_to('Edit', edit_trip_path(trip.id))%>
+        </button>
+        <button class="button-selects">
           <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure?" }) %>
         </button>
       </td>

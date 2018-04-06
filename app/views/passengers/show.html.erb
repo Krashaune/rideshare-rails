@@ -4,7 +4,12 @@ links to edit & Delete
 add a new trip-->
 
 <section>
-  <h2 class="details"><%= @passenger.name %> Information</h2>
+  <h2 class="details"><%= @passenger.name %> Information
+    <button class='button-selects'>
+    <%=link_to('Edit', edit_passenger_path(@passenger))%>
+    </button>
+  </h2>
+
 
   <ul class="passenger_details">
     <li>
@@ -14,7 +19,8 @@ add a new trip-->
       <strong>Total Spent:</strong> $<%=@passenger.total_spent%>
     </li>
     <li>
-      <button>
+
+      <button class='button-selects'>
         <%= link_to('Request Ride', passenger_trips_path(@passenger.id),method: :post)%>
       </button>
 
@@ -68,9 +74,14 @@ add a new trip-->
     </td>
     <td>
       <button class="button-selects">
+        <%=link_to('Edit', edit_trip_path(trip.id))%>
+      </button>
+      <button class="button-selects">
         <%= link_to('Delete',trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"})%>
       </button>
     </td>
+
+
   </tr>
 
   <% end %>
