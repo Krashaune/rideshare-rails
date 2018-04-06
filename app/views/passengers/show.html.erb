@@ -68,7 +68,7 @@ add a new trip-->
     </td>
     <td>
       <button class="button-selects">
-        <%= link_to('Delete',passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure?"})%>
+        <%= link_to('Delete',trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"})%>
       </button>
     </td>
   </tr>
