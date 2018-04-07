@@ -62,3 +62,13 @@ nav li:nth-child(4) {
 nav li:nth-child(5) {
   grid-column: 3
 }
+.details {
+  text-align: center;
+}
+.details {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.details strong {
+  font-size: 20px;
+}

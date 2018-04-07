@@ -3,9 +3,9 @@ list of all drivers
 links to edit & delete -->
 
 <section>
-  <h2 class="details"><%= @driver.name %></h2>
+  <h2 class="details"><%= @driver.name %> Information</h2>
 
-  <ul class="driver_details">
+  <ul class="details">
     <li>
       <strong>Model:</strong> <%= @driver.car_model %>
     </li>
@@ -20,7 +20,7 @@ links to edit & delete -->
 </section>
 
 <section>
-  <h3 class="details">Driver Trips</h3>
+  <h2 class="details"> <%= @driver.name%> Trips</h2>
 
   <table class="trips_table">
     <tr>
@@ -68,7 +68,7 @@ links to edit & delete -->
           <%=link_to('Edit', edit_trip_path(trip.id))%>
         </button>
         <button class="button-selects">
-          <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure?" }) %>
+          <%= link_to("Delete", driver_trip_path(trip.id), method: :delete, data: { confirm: "Are you sure?" }) %>
         </button>
       </td>
     </tr>

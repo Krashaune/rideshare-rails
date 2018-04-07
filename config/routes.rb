@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   resources :trips
 
   resources :passengers do
-    resources :trips, only: [:create]
+    resources :trips, only: [:create, :destroy]
   end
 
-  resources :drivers
+  resources :drivers do
+    resources :trip, only: [:destroy]
+  end
 
 end
