@@ -52,21 +52,6 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
-  # def complete
-  #   driver = Task.find(params[:id])
-  #   driver.completion_date = DateTime.now.strftime("%a, %B %d, %Y")
-  #
-  #   if driver.status == "complete"
-  #     driver.assign_attributes(status: "not complete", completion_date: nil)
-  #   else
-  #     driver.assign_attributes(status: "complete")
-  #   end
-  #
-  #   if driver.save
-  #     redirect_to drivers_path
-  #   end
-  # end
-
   private
 
   def driver_params

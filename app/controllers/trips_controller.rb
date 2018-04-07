@@ -34,12 +34,14 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
 
-    trip.assign_attributes(trip_params)
+    @trip.assign_attributes(trip_params)
 
-    if trip.save
-      redirect_to trip_path(trip)
+    if @trip.save
+      redirect_to trip_path(@trip)
+    else
+      render :edit
     end
   end
 
@@ -56,20 +58,6 @@ class TripsController < ApplicationController
 
   end
 
-  # def complete
-  #   trip = Task.find(params[:id])
-  #   trip.completion_date = DateTime.now.strftime("%a, %B %d, %Y")
-  #
-  #   if trip.status == "complete"
-  #     trip.assign_attributes(status: "not complete", completion_date: nil)
-  #   else
-  #     trip.assign_attributes(status: "complete")
-  #   end
-  #
-  #   if trip.save
-  #     redirect_to trips_path
-  #   end
-  # end
 
   private
 
