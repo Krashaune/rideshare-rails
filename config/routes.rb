@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :drivers do
-    resources :trip, only: [:destroy]
+    resources :trips, only: [:destroy]
   end
 
 end
