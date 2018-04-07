@@ -1,0 +1,21 @@
+<%= form_for @trip do |f| %>
+  <%= f.label :id, "ID" %>
+  <%= f.text_field :id %>
+
+  <%= f.label :date, "Date" %>
+  <%= f.date_field :date %>
+
+  <%= f.label :driver, "Driver ID" %>
+  <%= f.text_field :driver_id %>
+
+  <%= f.label :passenger, "Passenger ID" %>
+  <%= f.text_field :passenger_id %>
+
+  <%= f.label :cost, "Cost" %>
+  <%= f.number_field :cost %>
+
+  <%= f.label :rating, "Rating" %>
+  <%= f.number_field :rating %>
+
+  <%= f.submit %>
+<%end%>
